@@ -4,10 +4,9 @@ using EFT;
 using EFT.UI.DragAndDrop;
 using EFT.InventoryLogic;
 using EFT.UI;
-using Aki.Reflection.Patching;
-using Aki.Reflection.Utils;
-using CurrencyUtil = GClass2517;
-using FleaRequirement = GClass1844;
+using StayInTarkov;
+using CurrencyUtil = GClass2528;
+using FleaRequirement = GClass1854;
 using static LootValue.Globals;
 using BepInEx;
 using BepInEx.Logging;
@@ -154,7 +153,7 @@ The third is marked as the ultimate color. Anything over 10000 rubles would be w
 	internal static class Globals
 	{
 		public static bool isStashItemHovered = false;
-		public static ISession Session => ClientAppUtils.GetMainApp().GetClientBackEndSession();
+		public static ISession Session => StayInTarkovHelperConstants.GetMainApp().GetClientBackEndSession();
 		public static ManualLogSource logger { get; set; }
 		public static Item hoveredItem;
 		public static SimpleTooltip tooltip;
@@ -452,7 +451,7 @@ The third is marked as the ultimate color. Anything over 10000 rubles would be w
 		{
 			TraderClass tc = Session.GetTrader(bestTraderOffer.TraderId);
 
-			GClass2047.Class1737 @class = new GClass2047.Class1737();
+			GClass2057.Class1746 @class = new GClass2057.Class1746();
 			@class.source = new TaskCompletionSource<bool>();
 
 			var itemRef = new EFT.Trading.TradingItemReference
